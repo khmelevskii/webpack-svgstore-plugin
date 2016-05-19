@@ -19,6 +19,8 @@ function svgXHR(url, baseUrl) {
     } else {
       baseUrl = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
     }
+  } else {
+    url = url.replace(/^.*:\d+/g, '');
   }
 
   _fullPath = (baseUrl + '/' + url).replace(/([^:]\/)\/+/g, '$1');
